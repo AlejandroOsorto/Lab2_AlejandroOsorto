@@ -98,14 +98,6 @@ public class Lab2_AlejandroOsorto
                     if (pos >= 0 && pos < listaDetectives.size())
                     {
                         listaDetectives.remove(pos);
-                        
-                        //Se asigna un caso a otro detective
-                        
-                        
-                        
-                        //------------------------------------------------------------------
-                        
-                        
                     }
                     else
                     {
