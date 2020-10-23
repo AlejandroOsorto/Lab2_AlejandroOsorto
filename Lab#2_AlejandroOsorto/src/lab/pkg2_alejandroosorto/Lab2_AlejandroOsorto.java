@@ -57,7 +57,7 @@ public class Lab2_AlejandroOsorto
             switch (opcion)
             {
                 //Inicio gestion de detectives ------------------------------------------------------
-                case 1:
+                case 1: //Agregar detectives
                 {
                     System.out.print("Ingrese el nombre del detective: ");
                     String nombre = leer.next();
@@ -95,7 +95,7 @@ public class Lab2_AlejandroOsorto
                     listaDetectives.add(new Detectives(nombre, edad, nacionalidad, añosLab, nivel));
                     
                 } break;
-                case 2:
+                case 2: //Eliminar detectives
                 {
                     System.out.print("Ingrese la posicion en la lista del detective que desea eliminar: ");
                     int pos = leer.nextInt();
@@ -109,7 +109,7 @@ public class Lab2_AlejandroOsorto
                         System.out.println("Posicion ingresada no valida o fuera de rango");
                     }
                 } break;
-                case 3:
+                case 3: //Modificar detectives
                 {
                     System.out.print("Ingrese la posicion en la lista el detective que desea modificar: ");
                     int pos = leer.nextInt();
@@ -171,7 +171,7 @@ public class Lab2_AlejandroOsorto
                     }
                     //Fin del modificador
                 } break;
-                case 4:
+                case 4: //Listar detectives
                 {
                     String salida = "";
                     
@@ -184,7 +184,7 @@ public class Lab2_AlejandroOsorto
                 } break;
                 //Fin de gestion de detectives ------------------------------------------------------
                 //Inicio gestion de casos ------------------------------------------------------
-                case 5:
+                case 5: //Registrar casos
                 {
                     System.out.print("Ingrese el lugar del caso: ");
                     String lugar = leer.next();
@@ -254,7 +254,7 @@ public class Lab2_AlejandroOsorto
                     listaCasos.add(new Casos(lugar, desc, tipo, detectiveAC, estado));
                     
                 } break;
-                case 6:
+                case 6: //Modificar caso
                 {
                     System.out.print("Ingrese la posicion del caso dentro de la lista: ");
                     int pos = leer.nextInt();
@@ -335,7 +335,7 @@ public class Lab2_AlejandroOsorto
                         System.out.println("Numero ingresado fuera de rango");
                     }
                 } break;
-                case 7:
+                case 7: //Listar todos los casos
                 {
                     for (int i = 0; i < listaCasos.size(); i++)                    
                     {
@@ -353,6 +353,7 @@ public class Lab2_AlejandroOsorto
                         }
                     }
                     
+                    //Se asignan las listas a sus respectivas cadenas para poder imprimirlas en orden ----------------------------------------------
                     String salidaH = "";
                     for (Object t : listaCasosHomi)
                     {
@@ -370,6 +371,7 @@ public class Lab2_AlejandroOsorto
                     {
                         salidaR += listaCasosRobo.indexOf(t)+": "+t+"\n";
                     }
+                    //Fin de asignaciones ----------------------------------------------
                     
                     System.out.println("Homicidios: \n"+salidaH+"\nSecuestros: \n"+salidaS+"\nRobos: \n"+salidaR);
                     
@@ -377,7 +379,7 @@ public class Lab2_AlejandroOsorto
                     listaCasosSecu.clear();
                     listaCasosRobo.clear();
                 } break;
-                case 8:
+                case 8: //Listar solo los casos resueltos
                 {
                     int estado;
                     
@@ -402,6 +404,7 @@ public class Lab2_AlejandroOsorto
                         }
                     }
                     
+                    //Se asignan las listas a sus respectivas cadenas para poder imprimirlas en orden ----------------------------------------------
                     String salidaH = "";
                     for (Object t : listaCasosHomi)
                     {
@@ -419,6 +422,7 @@ public class Lab2_AlejandroOsorto
                     {
                         salidaR += listaCasosRobo.indexOf(t)+": "+t+"\n";
                     }
+                    //Fin de asignaciones ----------------------------------------------
                     
                     System.out.println("Homicidios: \n"+salidaH+"\nSecuestros: \n"+salidaS+"\nRobos: \n"+salidaR);
                     
@@ -426,7 +430,7 @@ public class Lab2_AlejandroOsorto
                     listaCasosSecu.clear();
                     listaCasosRobo.clear();
                 } break;
-                case 9:
+                case 9: //Listar solo los casos pendientes
                 {
                     int estado;
                     
@@ -477,7 +481,7 @@ public class Lab2_AlejandroOsorto
                     listaCasosSecu.clear();
                     listaCasosRobo.clear();
                 } break;
-                case 10: System.out.println("Saliendo . . ."); break;
+                case 10: System.out.println("Saliendo . . ."); break; //Estetica a la hora de la salida del programa
             }
         } //Fin del ciclo inicial
     } //Fin del metodo
