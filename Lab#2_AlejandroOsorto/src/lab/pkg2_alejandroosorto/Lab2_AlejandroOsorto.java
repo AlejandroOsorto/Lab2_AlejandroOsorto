@@ -22,17 +22,22 @@ public class Lab2_AlejandroOsorto
     {
         Scanner leer = new Scanner(System.in);
         
+        //Listas para las clases ----------------------------------------------
         ArrayList listaDetectives = new ArrayList();
         ArrayList listaCasos = new ArrayList();
+        //----------------------------------------------
         
+        
+        //Arrays para ordenar a la hora de listar ----------------------------------------------
         ArrayList listaCasosHomi = new ArrayList();
         ArrayList listaCasosSecu = new ArrayList();
         ArrayList listaCasosRobo = new ArrayList();
+        //----------------------------------------------
         
         int opcion = 0;
         
         
-        while (opcion != 10)
+        while (opcion != 10) //Inicio del ciclo inicial ----------------------------------------------
         {
             System.out.println("----MENU----");
             System.out.println("1) Agregar detectives");
@@ -217,7 +222,7 @@ public class Lab2_AlejandroOsorto
                         }
                     }
                     
-                    while (check == false)
+                    while (check == false) //Se inicia un bucle infinito si el nombre ingresado no esta en la lista de detectives
                     {
                         System.out.print("Nombre ingresado no esta en la lista de detectives, ingrese otro: ");
                         detectiveAC = leer.next();
@@ -322,6 +327,7 @@ public class Lab2_AlejandroOsorto
                                 
                                 ((Casos)listaCasos.get(pos)).setEstado(estado);
                             } break;
+                            default: System.out.println("Opcion elegida invalida");
                         }
                     }
                     else
@@ -428,7 +434,7 @@ public class Lab2_AlejandroOsorto
                     {
                         estado = ((Casos)listaCasos.get(i)).getEstado();
                         
-                        if (estado == 2) //RESUELTOS
+                        if (estado == 2) //PENDIENTES
                         {
                             if (((Casos)listaCasos.get(i)).getTipo() == 1)
                             {
@@ -445,6 +451,7 @@ public class Lab2_AlejandroOsorto
                         }
                     }
                     
+                    //Se asignan las listas a sus respectivas cadenas para poder imprimirlas en orden ----------------------------------------------
                     String salidaH = "";
                     for (Object t : listaCasosHomi)
                     {
@@ -462,6 +469,7 @@ public class Lab2_AlejandroOsorto
                     {
                         salidaR += listaCasosRobo.indexOf(t)+": "+t+"\n";
                     }
+                    //Fin de asignaciones ----------------------------------------------
                     
                     System.out.println("Homicidios: \n"+salidaH+"\nSecuestros: \n"+salidaS+"\nRobos: \n"+salidaR);
                     
@@ -469,10 +477,8 @@ public class Lab2_AlejandroOsorto
                     listaCasosSecu.clear();
                     listaCasosRobo.clear();
                 } break;
-                
+                case 10: System.out.println("Saliendo . . ."); break;
             }
-        }
-        
-    }
-
-}
+        } //Fin del ciclo inicial
+    } //Fin del metodo
+}//Fin de la clase
