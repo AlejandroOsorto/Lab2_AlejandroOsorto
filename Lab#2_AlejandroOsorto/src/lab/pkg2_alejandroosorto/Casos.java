@@ -29,6 +29,7 @@ public class Casos
         this.detectiveAC = detectiveAC;
         this.estado = estado;
         
+        //verificacion de tipo para imprimirlo
         switch (tipo)
         {
             case 1: tipoS = "Homicidio"; break;
@@ -36,6 +37,8 @@ public class Casos
             case 3: tipoS = "Robo"; break;
         }
         
+        
+        //Se verifica el numero como opcion y se asigna a la cadena String el nombre respectivo 1 = RESUELTO, 2 = PENDIENTE
         if (estado == 1)
         {
             estadoS = "RESUELTO";
@@ -73,6 +76,7 @@ public class Casos
     {
         this.tipo = tipo;
         
+        //verificacion de tipo para imprimirlo
         switch (tipo)
         {
             case 1: tipoS = "Homicidio"; break;
@@ -101,6 +105,7 @@ public class Casos
     {
         this.estado = estado;
         
+        //Se verifica el numero como opcion y se asigna a la cadena String el nombre respectivo 1 = RESUELTO, 2 = PENDIENTE
         if (estado == 1)
         {
             estadoS = "RESUELTO";
@@ -117,6 +122,8 @@ public class Casos
     
     
     //MA
+    
+    //Formatos de impresion
     @Override
     public String toString()
     {

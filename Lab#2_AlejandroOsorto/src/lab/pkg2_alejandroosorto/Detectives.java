@@ -81,6 +81,8 @@ public class Detectives
     }
     
     //MA
+    
+    //Formato de impresion
     @Override
     public String toString()
     {
